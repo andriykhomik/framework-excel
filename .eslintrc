@@ -14,7 +14,13 @@
     "semi": "off",
     "require-jsdoc": "off",
     "func-call-spacing": "off",
-    "eol-last": "off"
+    "eol-last": "off",
+    "no-trailing-spaces": "off",
+    "no-unused-vars": "off",
+    "space-before-function-paren": "off",
+    "padded-blocks": "off",
+    "spaced-comment": "off",
+    "operator-linebreak": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
