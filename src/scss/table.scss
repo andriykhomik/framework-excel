@@ -15,11 +15,12 @@
     background-color: red;
     display: flex;
     flex-direction: row;
-    min-height: 30px;
+    min-height: 15px;
     height: $row-height;
   }
 
   & .row-info{
+    position: relative;
     font-size: 16px;
     display: flex;
     justify-content: center;
@@ -37,21 +38,22 @@
   }
 
   & .column{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f8f9fa;
-    //height: 100%;
     border-right: 1px solid $border-color;
     border-bottom: 1px solid $border-color;
     font-size: 15px;
-    min-width: 40px;
+    min-width: 20px;
     width: $cell-width;
+
   }
 
   & .cell{
     background-color: #f8f9fa;
-    min-width: 40px;
+    min-width: 20px;
     width: $cell-width;
     height: 100%;
     border-right: 1px solid #e2e3e3;
@@ -67,14 +69,41 @@
   & .selected{
     background-color: #e3e1e1;
     border: none;
-    outline: 2px solid #0e6ae8;
+    outline: 2px solid $primary-color;
     z-index: 2;
    }
 
-  //& .cell:hover{
-  //  cursor: pointer;
-  //  outline: none;
-  //  border: 2px solid red;
-  //}
+  .col-resize, .row-resize{
+    position: absolute;
+    z-index: 1000;
+    background-color: $primary-color;
+    opacity: 0;
+  }
 
+  .col-resize{
+    top: 0;
+    bottom: 0;
+    right: -2px;
+    width: 4px;
+
+
+    &:hover{
+      opacity: 1!important;
+      cursor: col-resize!important;
+    }
+  }
+
+  .row-resize{
+    right: 0;
+    left: 0;
+    bottom: -2px;
+    height: 4px;
+
+    &:hover{
+      opacity: 1!important;
+      cursor: row-resize!important;
+    }
+  }
 }
+
+
